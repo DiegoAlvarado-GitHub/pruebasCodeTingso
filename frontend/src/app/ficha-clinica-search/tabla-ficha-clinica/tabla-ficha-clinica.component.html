@@ -1,0 +1,76 @@
+<div class = "Sesiones">
+    <!-- <mat-form-field>
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="filtrar($event)" placeholder="buscar">
+    </mat-form-field> -->
+
+    <!-- informacion: {{dataSource.filteredData|json}} -->
+
+    <!-- informacion: {{dataSource.filteredData[0].nombre}} -->
+
+
+
+    <div>
+        <h3>Resultados de busqueda para paciente: {{buscar}}</h3>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" matSort>
+    
+        <ng-container matColumnDef="rut">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>RUT</th>
+            <td mat-cell *matCellDef="let element">{{element.rut}}</td>
+        </ng-container>
+
+
+        <!-- <mat-option *ngFor="let tta of terapias" [value] = tta.id>
+            {{tta.tipo_terapia}}
+        </mat-option> -->
+
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let element">{{element.nombre}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nivel_escolaridad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nivel</th>
+            <td mat-cell *matCellDef="let element">{{element.nivel_escolaridad}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="terapias_recibidas">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Terapias</th>
+            <td mat-cell *matCellDef="let element">{{element.terapias_recibidas}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha_ingreso">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de ingreso</th>
+            <td mat-cell *matCellDef="let element">{{element.fecha_ingreso}}</td>
+        </ng-container>
+
+        <!-- element.terapias[0].tipo_terapia -->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)= "goToFicha(row.rut)"  *matRowDef="let row; columns: displayedColumns;"></tr>        
+    
+    </table>
+    <div *ngIf="loading; else noHayDatos">
+        cargando
+    </div>
+    <ng-template #noHayDatos>
+        <div *ngIf="noCoincidencias">
+            <h3>No hay coincidencias</h3>
+            <div class="divBotonRegistrar">
+                <button (click)="registarPaciente()" mat-raised-button>Registrar nuevo paciente</button>
+            </div>
+        </div>
+    </ng-template>
+
+
+    <div class = "paginador">
+        <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons 
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</div>
+
+
+  

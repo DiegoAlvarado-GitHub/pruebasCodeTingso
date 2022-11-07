@@ -1,0 +1,70 @@
+.cardTitle{
+    align-items : flex-start;
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-bottom:2%;
+    margin-top:1%;
+}
+.cardTitle mat-card-title{
+    height: 24px;
+    margin-left: 1%;
+    margin-bottom:0;
+    margin-top:0;
+    margin-right: 0;
+}
+
+.mat-card-title{
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.cardcontent mat-card-content{
+    margin-left: 5%;
+    margin-bottom:0;
+    margin-top:0;
+    margin-right: 5%;
+}
+
+.mat-card-content{
+    display: flex;
+    flex: 1 1 auto;
+}
+  
+
+
+.botones{
+    justify-content: center;
+    margin-left: 10%;
+}
+.botones button{
+    /*justify-content: center;*/
+    width: 350px;
+    height: 50px; 
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    background-color: rgba(244, 80, 49, 0.54);
+    color: white;
+    font-size: large;
+    font-style: inherit;
+    font-weight: 500;
+    letter-spacing: 0.2;
+}
+
+
+.espaciador1 {
+    flex-basis: 370px;
+}
+
+.espaciador2 {
+    flex-basis: 200px;
+}
+
+.tabla{
+    margin-left: 5%;
+    margin-bottom:0;
+    margin-top:0;
+    margin-right: 5%;
+}

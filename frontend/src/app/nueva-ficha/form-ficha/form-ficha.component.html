@@ -1,0 +1,111 @@
+<form [formGroup]="formficha">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName= "nombre" required>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Apellidos</mat-label>
+            <input matInput formControlName= "apellidos" required>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Rut</mat-label>
+            <input matInput formControlName= "rut" type="number" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Dirección</mat-label>
+            <input matInput formControlName= "direccion" required>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Comuna</mat-label>
+            <input matInput formControlName= "comuna" required>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <input matInput formControlName= "telefono" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Correo</mat-label>
+            <input matInput formControlName= "correo" required>
+        </mat-form-field>
+
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre tutor</mat-label>
+            <input matInput formControlName= "tutor" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Parentesco</mat-label>
+            <input matInput formControlName= "parentesco" required>
+        </mat-form-field>
+
+    </div>
+
+</form>
+
+
+<div class="divInfoRegistro">
+
+    <!-- fecha de nacimiento -->
+    <div class= "fechaNacimiento">
+        <h3>Fecha de nacimiento</h3>
+        <mat-form-field appearance="fill" class="fecha1">
+            <input #fecha matInput [matDatepicker]="pickerNacimiento" [formControl]= "date">
+            <mat-label>MM/DD/YYYY</mat-label>
+            <mat-datepicker-toggle matSuffix [for]="pickerNacimiento"></mat-datepicker-toggle>
+            <mat-datepicker #pickerNacimiento></mat-datepicker>
+        </mat-form-field>
+     </div>
+    
+    <!-- fecha de ingreso al centro -->
+    <div class= "fechaIngreso">
+        <h3>Fecha de ingreso al centro</h3>
+        <mat-form-field appearance="fill" class="fecha">
+            <input #fecha matInput [matDatepicker]="picker3" [formControl]= "date1">
+            <mat-label>MM/DD/YYYY</mat-label>
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+     </div>
+     
+    <!-- Escolaridad -->
+    <!-- muestra como opciones los diferentes grados de escolaridad que se encuentra en "form.component.ts"-->
+    <div class= "escolaridad">
+        <h3>Escolaridad</h3>
+        <form [formGroup]="formficha">
+        <mat-form-field appearance="fill">
+            <mat-label>Grado actual</mat-label>
+            <mat-select formControlName = "escolaridad">
+            <mat-option *ngFor="let tta of escolaridades;index as i" [value]="tta.nivel">
+                {{tta.nivel}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    </div>
+    
+    
+</div>
+
+
+    
+
+    <div class="divBotonRegistrar">
+        <button (click)="registar()" mat-raised-button>Registrar nuevo paciente</button>
+    </div>
+
+

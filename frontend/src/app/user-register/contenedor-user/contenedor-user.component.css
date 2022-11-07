@@ -1,0 +1,53 @@
+.titulo {
+    /* align-items : center;alinea los elementos al centro de la imagen verticalmente */
+    align-items : start;
+    justify-content: center; 
+    /* position: relative; */
+    height : 40%;
+    width: 100%; 
+    display: flex;
+    background-color :  rgba(244, 80, 49, 0.54);
+    margin-top: 0px;
+    
+  }
+  
+  .cardTitle{
+  
+    align-items : center;
+    
+    display: flex;
+    flex-direction: row;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-left: 1%;
+  
+  }
+  .cardTitle mat-card-title{
+      margin-left: 1%;
+      margin-bottom:0;
+      margin-top:0;
+      margin-right: 0;
+  
+  }
+  
+  
+  .encabezado{
+    color: white;
+    position: sticky;
+    font-size: 500%;
+    font-stretch: 800%;
+    letter-spacing: 0.2em;
+    font-weight: black;
+    margin-top: 2%;
+  
+  
+  }
+  .carta {
+    position: relative;
+    top: -25%;
+    margin: 2%;
+  }
+  mat-card {
+      border-radius: 10px;
+      box-shadow : 0 0 20px rgba(0,0,0,0.2);
+  }

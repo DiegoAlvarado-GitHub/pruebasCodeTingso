@@ -1,0 +1,12 @@
+<p>Holas este es el root</p>
+<button (click)="getSesiones()"  mat-raised-button>get sesiones</button>
+<mat-slide-toggle
+[formControl]="privada">
+            <div *ngIf="privada.value; else elseBlock">
+                <mat-icon aria-hidden="false" fontIcon="lock"></mat-icon>
+            </div>
+            <ng-template #elseBlock>
+                <mat-icon aria-hidden="false" fontIcon="lock_open"></mat-icon>
+            </ng-template>          
+</mat-slide-toggle>
+<router-outlet></router-outlet>

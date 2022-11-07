@@ -1,0 +1,139 @@
+<div class = "contenido">
+    <!--Div para boton para ir a ficha e indicador de privada de la sesion  -->
+    <div class="primeraLinea">
+
+        <!-- Boton para regresar a la pagina de la ficha clinica -->  
+        <div class="botonFicha">
+            <button mat-button (click) = "volverFicha()"> 
+                <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> 
+                Ir a ficha clínica  
+            </button>
+        </div>
+
+        <!-- Icono que indica si es privada o no la ficha -->
+        <div class="iconoPrivada">
+            <!-- condicional si sesion es privada -->
+            <div *ngIf="datosSesion.privada; else elseBlock">
+                <mat-icon aria-hidden="false" fontIcon="lock"></mat-icon>
+            </div>
+            <!-- Condicional si sesion no es privada -->
+            <ng-template #elseBlock>
+                <mat-icon aria-hidden="false" fontIcon="lock_open"></mat-icon>
+            </ng-template>  
+        </div>
+
+    </div>
+
+
+    <div class="titulo_sesion">
+        <!-- titulo de la sesion, transformado a traves de un PIPE -->
+        <h1 class="fecha">
+            {{datosSesion.fecha | date: 'EEEE d MMMM  y'| uppercase }}
+        </h1>
+    </div>
+    
+    <!-- titulo de informacion de registro -->
+    <div class="cardTitle">
+        <mat-icon aria-hidden="false" fontIcon="event"></mat-icon>
+        <mat-card-title >     
+                Información de registro    
+        </mat-card-title>
+        <span class="espaciador"></span>
+    </div>
+
+    <!-- informacion de registro de una sesion -->
+    <div class = "informacionRegistro">
+        <div class = "textoParrafos">
+                <!-- Mostrar el profesional que registra la sesion -->
+                <div class = "datos">
+                    <div class = "tipo">
+                        <h3><b>PROFESIONAL</b></h3>  
+                    </div>
+                    <div class = "dato">
+                        <h3>{{datosSesion.profesional}}</h3>
+
+                    </div>
+                    
+                    
+                </div>
+                <!-- Mostrar la especialidad que se desarrollo -->
+                <div class= "datos">
+                    <div class = "tipo">
+                        <h3><b>ESPECIALIDAD</b></h3>
+                    </div>
+                    <div class = "dato">
+                        <h3>{{datosSesion.tipo_sesion}}</h3>
+                    </div>
+                    
+                    
+                </div>
+        </div>
+        <div class = "textoParrafos">
+                <div class="datos">
+                    <div class = "tipo">
+                        <h3><b>MODALIDAD</b></h3>
+                    </div>
+
+                    <div class = "dato">
+                        <h3>{{datosSesion.formato_presencial}}</h3>
+                    </div>
+                </div>
+
+                <div class="datos">
+                    <div class = "tipo">
+                        <h3><b>PACIENTE INGRESA</b></h3>
+                    </div>
+                    <div class = "dato">
+                        <h3>{{datosSesion.acompanado}}</h3>
+                    </div>                    
+                </div>
+        </div>
+    </div>
+
+    
+
+
+
+    <!-- Divisor de informacion -->
+    <mat-divider></mat-divider>
+    <!-------------------------------------------------------------------->
+
+    <!-- Titulo de descripcion de sesion -->
+    <div class="cardTitle">
+        <mat-icon aria-hidden="false" fontIcon="description"></mat-icon>
+        <mat-card-title >     
+                Contenido de sesión
+        </mat-card-title>
+        <span class="espaciador"></span>
+    </div>
+    <!-- Contenedor para mostrar la informacion de la sesion -->
+    <div class ="contenidoSesion">
+        <div class="textoParrafos">
+            <!-- Se crea carta para mostrar el objetivo de la actividad -->
+            <mat-card>
+                <h3><b>Objetivo/actividad</b></h3>
+                <h3>{{datosSesion.objetivo_actividad}}</h3>
+            </mat-card>
+            <!-- Carta para mostrar la indicacion a cuidadores -->
+            <mat-card>
+                <h3><b>Indicacion a cuidadores</b></h3>
+                <h3>{{datosSesion.indicacion_cuidadores}}</h3>
+
+            </mat-card>
+            <!-- Carta para mostrar las observaciones de la sesion -->
+            <mat-card>
+                <h3><b>Observaciones</b></h3>
+                <h3>{{datosSesion.observaciones}}</h3>
+            </mat-card>
+    
+        </div>
+
+    </div>
+
+
+    
+    <mat-card-actions align="end">
+        <button mat-raised-button color="primary" (click) = "compartirSesion()">Compartir sesión <mat-icon aria-hidden="false">share</mat-icon> </button>
+    </mat-card-actions>
+
+</div>

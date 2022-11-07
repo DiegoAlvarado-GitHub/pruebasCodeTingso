@@ -1,0 +1,90 @@
+<form [formGroup]="formanamnesis">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre completo</mat-label>
+            <input matInput formControlName= "nombreCompleto" required>
+        </mat-form-field>
+    </div>
+
+    <!-- fecha de nacimiento -->
+    <div class= "fechaNacimiento">
+        <h3>Fecha de nacimiento</h3>
+        <mat-form-field appearance="fill" class="fecha1">
+            <input #fecha matInput [matDatepicker]="pickerNacimiento" [value]="date1.value">
+            <mat-label>MM/DD/YYYY</mat-label>
+            <mat-datepicker-toggle matSuffix [for]="pickerNacimiento"></mat-datepicker-toggle>
+            <mat-datepicker #pickerNacimiento></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Rut</mat-label>
+            <input matInput formControlName= "rut" type="number" required>
+        </mat-form-field>
+    </div>
+    
+    <!-- Edad actual del paciente -->
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Nacionalidad</mat-label>
+            <input matInput formControlName= "nacionalidad" required>
+        </mat-form-field>
+    </div>
+
+    <!-- fecha de la anamnesis -->
+    <div class= "fechaNacimiento">
+        <h3>Fecha de nacimiento</h3>
+        <mat-form-field appearance="fill" class="fecha1">
+            <input #fecha matInput [matDatepicker]="pickerNacimiento" [value]="date1.value">
+            <mat-label>MM/DD/YYYY</mat-label>
+            <mat-datepicker-toggle matSuffix [for]="pickerNacimiento"></mat-datepicker-toggle>
+            <mat-datepicker #pickerNacimiento></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Dirección</mat-label>
+            <input matInput formControlName= "direccion" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Comuna</mat-label>
+            <input matInput formControlName= "comuna" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Correo/Teléfono</mat-label>
+            <input matInput formControlName= "contacto" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre informante</mat-label>
+            <input matInput formControlName= "informante" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Parentesco con informante</mat-label>
+            <input matInput formControlName= "Parentesco" required>
+        </mat-form-field>
+    </div>
+</form>
+
+
+
+
+    
+
+    <div class="divBotonRegistrarAnamnesis">
+        <button (click)="registar()" mat-raised-button>Guardar cambios</button>
+    </div>

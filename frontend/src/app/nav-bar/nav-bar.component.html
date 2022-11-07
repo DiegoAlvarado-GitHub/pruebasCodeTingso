@@ -1,0 +1,107 @@
+<mat-sidenav-container class="sideNav" hasBackdrop="true">
+    <!-- navbar lateral, agregar aqui pagias a donde redirigir -->
+    <mat-sidenav #drawer mode="side">
+        <mat-action-list>
+            <div mat-header><b>Menu</b></div>
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Select</mat-label>
+                <mat-select [formControl] = "tipoDato">
+                  <mat-option value="rut">Rut</mat-option>
+                  <mat-option value="nombre">Nombre</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field" appearance="fill" >
+                <mat-label>Búsqueda de paciente</mat-label>
+                <input matInput [formControl] = "busqueda"  (keydown.enter)="busquedaPaciente()" type="text" [(ngModel)]="value">
+                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+                <button (click)="busquedaPaciente()" mat-icon-button color="primary" aria-label="Example icon button with a home icon" matSuffix>
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+
+
+            
+
+
+            <mat-list-item [routerLink]="['nuevaficha']">Nuevo Paciente</mat-list-item>   
+        </mat-action-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar class= "bar"color="white">
+            <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <!-- Espacio entre botones menu -->
+            <span class="example-spacer"></span>
+            <div>
+                <img src="../../assets/logo.png" alt="logoCasaquinta" width="100%" height="50">
+            </div>
+            <span class="example-spacer"></span>
+            <!-- Boton log out -->
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </mat-toolbar>
+        <!-- <div class="paginas"> -->
+        <router-outlet></router-outlet>
+        <!-- </div> -->
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-drawer-container class="menu" hasBackdrop="false">
+    <mat-drawer #drawer mode="side">I'm a drawer</mat-drawer>
+    <mat-drawer-content>   
+        
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+
+
+</mat-drawer-container> -->
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+    

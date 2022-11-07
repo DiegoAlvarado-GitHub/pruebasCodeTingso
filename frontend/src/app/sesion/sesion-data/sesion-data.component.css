@@ -1,0 +1,141 @@
+.titulo_sesion{ 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items : center;
+    text-align: center;
+}
+
+.fecha {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: fit-content;
+	font-size : 2rem;
+	color : #4B4B4B;
+}
+	
+.cardTitle{
+    align-items : flex-start;
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-bottom:2%;
+    margin-top:2%;
+}
+.cardTitle mat-card-title{
+    height: 10%;
+    margin-left: 1%;
+    margin-bottom:0;
+    margin-top:0;
+    margin-right: 0;
+}
+  
+.mat-card-title{
+    display: flex;
+    flex: 1 1 auto;
+}
+
+
+
+.textoParrafos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:0;
+    margin-top:0;
+
+}
+
+
+.informacionRegistro{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.datos{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    
+}
+.tipo{
+    width: 45%;
+    text-align: right;
+
+} 
+
+.dato{
+    width: 45%;
+    text-align: left;
+}
+ 
+
+.mat-card-content{
+    display: flex;
+    flex: 1 1 auto;
+}
+  
+.espaciador {
+    flex: 1 1 auto;
+}
+
+.botones button{
+    width: 200  px;
+    height: 50px; 
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    background-color: rgb(42, 137, 252);
+    font-size: large;
+}
+
+.botones{
+    align-items: flex-end;
+    /* padding-left: 80%; */
+}
+
+
+.botonFicha button{
+    width: 200  px;
+    height: 50px; 
+    font-size: large;
+}
+
+
+
+.primeraLinea{
+    justify-content: space-between;
+    align-items : flex-start;
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+}
+
+
+.contenidoSesion{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.mat-card{
+    margin-bottom: 1%;
+    background-color: rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 10px 1.5px rgba(0, 0, 0, 0.15);
+}
+
+
+
+

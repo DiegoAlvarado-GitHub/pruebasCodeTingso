@@ -1,0 +1,42 @@
+.titulo {
+    /* align-items : center;alinea los elementos al centro de la imagen verticalmente */
+    align-items : start;
+    justify-content: center; 
+    position: absolute;
+    height : 30%;
+    width: 100%; 
+    display: flex;
+    background-color :  rgba(49, 100, 244, 0.54);
+    
+  }
+
+
+  
+  .encabezado{
+    color: white;
+    position: sticky;
+    font-size: 500%;
+    font-stretch: 800%;
+    letter-spacing: 0.2em;
+    font-weight: black;
+    margin-top: 4%;
+  
+  
+  }
+  .carta {
+    position: relative;
+    top: 150px;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+  }
+  .mat-card {
+      border-radius: 10px;
+      box-shadow : 0 0 15px rgba(0,0,0,0.2);
+
+  }
+  .contenido{
+    overflow: hidden;
+}
+
+

@@ -1,0 +1,83 @@
+<div>
+    <div class="cardTitle">
+        <mat-icon aria-hidden="false" fontIcon="person"></mat-icon>
+        <mat-card-title >     
+                Informacion de registro    
+        </mat-card-title> 
+    </div>
+
+    
+</div>
+
+<div class="cardcontent">
+    <!--No se esta guardando el nombre completo en la base de datos-->
+    <mat-card-content>
+        <h3><b>Nombre del paciente:&nbsp;</b></h3>
+        <h3>{{ficha.nombre}}</h3>
+    </mat-card-content>
+<div>
+
+<div class="cardcontent">
+    <mat-card-content>
+        <h3><b>RUT:&nbsp;</b></h3>
+        <h3>{{ficha.rut}}</h3>
+    </mat-card-content>
+<div>
+
+<div class="cardcontent">
+    <mat-card-content>
+        <h3><b>Dirección:&nbsp;</b></h3>
+        <h3>{{ficha.direccion}}</h3>
+        <span class="espaciador1"></span> 
+        <h3><b>Comuna:</b></h3>
+        <h3>{{ficha.comuna}}</h3>
+    </mat-card-content>
+<div>
+
+<div class="cardcontent">
+    <mat-card-content>
+        <h3><b>Teléfono: &nbsp;</b></h3>
+        <h3>{{ficha.telefono}}</h3>
+        <span class="espaciador1"></span> 
+        <h3><b>Correo:&nbsp;</b></h3>
+        <h3>{{ficha.correo}}</h3>
+    </mat-card-content>
+<div>
+
+<div class="cardcontent">
+    <mat-card-content>
+        <h3><b>Fecha de nacimiento: &nbsp;</b></h3>
+        <h3>{{ficha.fecha_nacimiento}}</h3>
+        <span class="espaciador2"></span> 
+        <h3><b>Fecha de ingreso al centro: &nbsp;</b></h3>
+        <h3>{{ficha.fecha_ingreso}}</h3>
+    </mat-card-content>
+<div>
+
+<div class="cardcontent">
+    <mat-card-content>
+        <h3><b>Nivel de escolaridad: &nbsp;</b></h3>
+        <h3>{{ficha.nivel_escolaridad}}</h3>
+    </mat-card-content>
+<div>
+
+<div class="botones">
+    <button mat-raised-button>Anamnesis</button>
+    <button mat-raised-button>Modifcar información</button>
+    <button mat-raised-button>Banco de archivos</button>
+</div>
+
+
+<div class="cardTitle">
+    <mat-icon aria-hidden="false" fontIcon="date_range"></mat-icon>
+    <mat-card-title >     
+            Historial de actividades
+    </mat-card-title>
+    <span class="espaciador"></span>
+
+    
+</div>
+
+<div class="tabla">
+        <app-sesiones-ficha-clinica [id_ficha]="id"></app-sesiones-ficha-clinica>
+</div>

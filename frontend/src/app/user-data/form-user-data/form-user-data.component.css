@@ -1,0 +1,8 @@
+.idUser {
+
+    display: flex;
+};
+
+.separacion {
+    flex: 1 1 auto;
+}

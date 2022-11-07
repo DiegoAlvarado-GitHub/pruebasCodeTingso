@@ -1,0 +1,106 @@
+        
+<div class="Contenido">
+    <form [formGroup]="formSesion">
+        <div class="cardTitle">
+            <mat-icon aria-hidden="false" fontIcon="event"></mat-icon>
+            <mat-card-title >     
+                    Informacion de Registro de Sesión
+                    <!-- Espacio entre slide y titulo -->
+                    <span class="espaciador"></span>
+                    <mat-slide-toggle formControlName = "privada" required>
+                                    <div *ngIf="formSesion.value.privada ; else elseBlock">
+                                        <mat-icon aria-hidden="false" fontIcon="lock"></mat-icon>
+                                    </div>
+                                    <ng-template #elseBlock>
+                                        <mat-icon aria-hidden="false" fontIcon="lock_open"></mat-icon>
+                                    </ng-template>          
+                        </mat-slide-toggle>
+            </mat-card-title>
+
+        </div>
+
+        <div class="divInfoRegistro">
+            
+            <!-- fecha -->
+            <div class= "fechaSesion">
+                <h3>Fecha registro de sesión</h3>
+                <mat-form-field appearance="fill" class="fecha">
+                    <input #fecha matInput [matDatepicker]="picker3" [formControl]= "serializedDate" formControlName = "fecha">
+                    <mat-label>DD/MM/AAAA</mat-label>
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+            </div>
+            
+
+            <!-- Especialidad -->
+            <!-- muestra como opciones "terapias" que se encuentra en "form.component.ts"-->
+
+            <div class= "terapiaSesion">
+                <h3>Terapia</h3>
+                <mat-form-field appearance="fill">
+                    <mat-label>Especialidad</mat-label>
+                    <mat-select #terapia formControlName = "terapia">
+                    <mat-option *ngFor="let tta of terapias" [value] = tta.id>
+                        {{tta.tipo_terapia}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class= "terapiaSesion">
+            <h3>Formato</h3>
+            <mat-radio-group formControlName = "formatoSesion">
+                <mat-radio-button value="true">Presencial</mat-radio-button>
+                <mat-radio-button value="false">Online</mat-radio-button>
+            </mat-radio-group>
+            </div>
+            <div class= "terapiaSesion">
+                <h3>Ingreso a sesión</h3>
+                <mat-radio-group formControlName = "acompanamiento">
+                    <mat-radio-button value="true">Acompañado</mat-radio-button> 
+                    <mat-radio-button value="false">Solo</mat-radio-button> 
+                </mat-radio-group>
+            </div>
+        </div>
+
+
+        
+
+        
+        <div class="cardTitle">
+            <mat-icon aria-hidden="false" fontIcon="description"></mat-icon>
+            <mat-card-title >    
+            Contenido de sesión
+            </mat-card-title>
+        </div>
+            <!-- Objetivo, indicaciones y observaciones -->
+        <div class="divContenido">
+            <mat-form-field class="textObjetivoActividad" appearance="fill">
+                <mat-label>Objetivo/Actividad</mat-label>
+                <textarea #objetivoActividad formControlName = "objetivoActividad" matInput placeholder=""></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="textIndicaciones" appearance="fill">
+                <mat-label>Indicaciones a cuidadores</mat-label>
+                <textarea #indicaciones formControlName = "indicaciones" matInput placeholder=""></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="textObservaciones" appearance="fill">
+                <mat-label>Observaciones</mat-label>
+                <textarea #observaciones formControlName = "observaciones" matInput placeholder=""></textarea>
+            </mat-form-field>
+        </div>
+
+        
+
+    </form>
+</div>
+
+
+
+
+<div class="divBotonRegistrar">
+    <button (click)="registar()" mat-raised-button>Registrar sesión</button>
+</div>
+
+
